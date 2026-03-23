@@ -1,0 +1,215 @@
+/* MAIN CONTAINER */
+.home-container {
+    position: relative;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* OVERLAY */
+.home-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.95));
+    z-index: 0;
+}
+
+/* SECTION BASE */
+.section {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 40px;
+
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.7);
+
+    transition: transform 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+/* REVERSE */
+.section.reverse {
+    flex-direction: row-reverse;
+}
+
+/* HERO */
+.hero {
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 52px;
+    color: #c084fc;
+    text-shadow: 0 0 25px rgba(138,43,226,0.8);
+}
+
+.hero p {
+    margin-top: 15px;
+    max-width: 750px;
+    font-size: 18px;
+    color: #ddd;
+}
+
+/* HERO IMAGES */
+.hero-images {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* CONTENT */
+.content {
+    max-width: 550px;
+}
+
+.content h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.content p,
+.content ul {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* LIST */
+.content ul {
+    margin-left: 20px;
+}
+
+/* SIDE IMAGE */
+.side-img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 25px rgba(0,0,0,0.8),
+        0 0 15px rgba(138,43,226,0.5);
+
+    transition: all 0.4s ease;
+}
+
+.side-img:hover {
+    transform: scale(1.08) rotate(2deg);
+}
+
+/* LARGE IMAGE */
+.side-img.large {
+    width: 280px;
+    height: 280px;
+}
+
+/* SMALL IMAGE */
+.img {
+    width: 190px;
+    height: 190px;
+    border-radius: 14px;
+    object-fit: cover;
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.9),
+        0 0 10px rgba(138,43,226,0.4);
+
+    transition: all 0.4s ease;
+}
+
+.img:hover {
+    transform: scale(1.1);
+}
+
+/* SPIN */
+.spin {
+    animation: spin 2s ease-in-out;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg) scale(1.15); }
+    100% { transform: rotate(360deg); }
+}
+
+/* QUOTE */
+.quote {
+    text-align: center;
+    font-size: 24px;
+    margin: 120px auto;
+    color: #c084fc;
+    font-style: italic;
+
+    text-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+/* MUSIC BUTTON */
+.music-btn {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 1000;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #c084fc;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px rgba(138,43,226,0.5);
+}
+
+/* ICON */
+.music-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* PLAYING */
+.music-icon.playing {
+    animation: spinGlow 2s linear infinite;
+}
+
+@keyframes spinGlow {
+    0% {
+        transform: rotate(0deg) scale(1);
+        filter: drop-shadow(0 0 5px #c084fc);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+        filter: drop-shadow(0 0 20px #c084fc);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+        filter: drop-shadow(0 0 5px #c084fc);
+    }
+}
